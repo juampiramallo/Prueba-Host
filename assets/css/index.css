@@ -56,6 +56,11 @@
   z-index: 1; /* Asegura que el texto esté encima de otros elementos */
 }
 
+.wsp-button {
+  width: 400px; /* Ajusta el tamaño del botón de WhatsApp */
+  margin-top: 20px;
+}
+
 /* Footer */
 footer {
   background-color: #343a40; /* Color de fondo para el footer */
@@ -86,6 +91,9 @@ footer a:hover {
   .centered-text p {
     font-size: 1em; /* Ajusta el tamaño del texto introductorio en pantallas pequeñas */
     padding: 8px; /* Ajusta el espacio alrededor del párrafo */
+  }
+  .wsp-button {
+    width: 300px; /* Ajusta el tamaño del botón en pantallas pequeñas */
   }
 }
 
