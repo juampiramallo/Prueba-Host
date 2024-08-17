@@ -13,28 +13,3 @@
   font-size: 1.1em;
   text-align: justify;
 }
-
-/* Values Section */
-.values-section {
-  background-color: white; /* Fondo semitranslúcido para coincidir con la sección inicial */
-  padding: 50px; /* Espaciado superior e inferior */
-}
-
-.value-box {
-  background-color: white; /* Fondo más oscuro para los cuadros */
-  border: 1px solid #000000; /* Borde ligeramente más claro */
-}
-
-.value-boxh3 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.5em;
-  margin-bottom: 15px;
-  color: black;
-}
-
-.value-boxp {
-  color: black;
-  font-family: "Lora", serif;
-  font-size: 1em;
-  line-height: 1.6;
-}
