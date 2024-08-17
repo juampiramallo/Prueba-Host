@@ -1,0 +1,28 @@
+.contact-section {
+  background-color: #f8f9fa; /* Color de fondo suave */
+  font-family: "Montserrat", sans-serif;
+}
+
+.contact-info {
+  margin-top: 20px;
+}
+
+.contact-info p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2em;
+}
+
+.wsp-button {
+  width: 400px; /* Ajusta el tamaño del botón de WhatsApp */
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .contact-info p {
+    font-size: 1em; /* Ajusta el tamaño del texto en pantallas pequeñas */
+  }
+
+  .wsp-button {
+    width: 300px; /* Ajusta el tamaño del botón en pantallas pequeñas */
+  }
+}

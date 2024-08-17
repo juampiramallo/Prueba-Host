@@ -1,0 +1,115 @@
+/* General styles for the homepage */
+.background-image {
+  background-image: url("../images/truck1.jpg");
+  height: 100vh; /* Ocupa 100% de la altura de la vista */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; /* Ajusta la imagen para cubrir el contenedor */
+  position: relative;
+  opacity: 0.9;
+  display: flex; /* Usado para centrar el contenido vertical y horizontalmente */
+  align-items: center;
+  justify-content: center;
+}
+
+.centered-text {
+  text-align: center;
+  color: white;
+  max-width: 80%;
+  padding: 0 20px; /* Añadido para evitar que el texto se acerque demasiado a los bordes */
+}
+
+.centered-text h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 4em; /* Tamaño ajustado para pantallas grandes */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitranslúcido */
+  padding: 15px; /* Espacio alrededor del texto */
+  border-radius: 10px; /* Bordes redondeados */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Sombra del texto */
+  margin: 20px; /* Elimina el margen para evitar la superposición */
+}
+
+.centered-text p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2em; /* Tamaño ajustado para pantallas grandes */
+  margin-top: 15px; /* Ajusta el espacio encima del párrafo */
+  line-height: 1.5;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitranslúcido */
+  padding: 10px; /* Espacio alrededor del párrafo */
+  border-radius: 10px; /* Bordes redondeados */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra del texto */
+  white-space: normal; /* Permite que el texto se ajuste en varias líneas */
+  margin: 0; /* Elimina el margen para evitar la superposición */
+}
+
+/* Values Section */
+.values-section {
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Fondo semitranslúcido para coincidir con la sección inicial */
+  padding: 50px0; /* Espaciado superior e inferior */
+}
+
+.value-box {
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo más oscuro para los cuadros */
+  border: 1px solid #6c757d; /* Borde ligeramente más claro */
+}
+
+.value-boxh3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.value-boxp {
+  font-family: "Lora", serif;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  background-color: #343a40; /* Color de fondo para el footer */
+  margin-top: auto; /* Asegura que el footer esté en la parte inferior */
+  padding: 10px 0; /* Añadido para mejorar el espaciado */
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .centered-text {
+    max-width: 90%; /* Aumenta el ancho máximo en pantallas pequeñas */
+    padding: 0 10px; /* Reduce el padding horizontal */
+  }
+
+  .centered-text h1 {
+    font-size: 2.5em; /* Ajusta el tamaño del texto en pantallas pequeñas */
+  }
+
+  .centered-text p {
+    font-size: 1em; /* Ajusta el tamaño del texto introductorio en pantallas pequeñas */
+    padding: 8px; /* Ajusta el espacio alrededor del párrafo */
+  }
+}
+
+@media (max-width: 576px) {
+  .centered-text h1 {
+    font-size: 1.8em; /* Ajusta aún más el tamaño del texto en pantallas muy pequeñas */
+  }
+
+  .centered-text p {
+    font-size: 0.9em; /* Ajusta el tamaño del texto introductorio en pantallas muy pequeñas */
+    padding: 6px; /* Ajusta el espacio alrededor del párrafo */
+  }
+}

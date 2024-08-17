@@ -1,0 +1,41 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: #343a40; /* Color de fondo para la navbar */
+}
+
+.navbar-brand {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-left: 20px;
+}
+
+.nav-link {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  margin-left: 10px;
+}
+
+footer {
+  background-color: #343a40; /* Color de fondo para el footer */
+  margin-top: auto; /* Asegura que el footer esté en la parte inferior */
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
