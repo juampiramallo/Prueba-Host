@@ -1,71 +1,98 @@
 /* General styles for the homepage */
 .background-image {
-  position: relative; /* Necesario para posicionar el pseudo-elemento */
+  position: relative;
   background-image: url("../images/truck1.jpg");
-  height: 100vh; /* Ocupa 100% de la altura de la vista */
+  height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; /* Ajusta la imagen para cubrir el contenedor */
+  background-size: cover;
+  background-attachment: fixed; /* Hace que la imagen de fondo sea fija */
   opacity: 0.9;
-  display: flex; /* Usado para centrar el contenido vertical y horizontalmente */
+  display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column; /* Asegura que el contenido se centre verticalmente */
 }
 
 .centered-text {
   text-align: center;
   color: white;
   max-width: 80%;
-  padding: 0 20px; /* Añadido para evitar que el texto se acerque demasiado a los bordes */
+  padding: 0 20px; /* Mantiene el texto alejado de los bordes */
 }
 
 .centered-text h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: 4em; /* Tamaño ajustado para pantallas grandes */
+  font-size: 3.5em; /* Tamaño ajustado */
   background-color: rgba(0, 0, 0, 0.6); /* Fondo semitranslúcido */
   padding: 15px; /* Espacio alrededor del texto */
   border-radius: 10px; /* Bordes redondeados */
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Sombra del texto */
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .centered-text p {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.2em; /* Tamaño ajustado para pantallas grandes */
-  margin-top: 15px; /* Ajusta el espacio encima del párrafo */
+  font-size: 1.2em; /* Tamaño ajustado */
+  margin-top: 15px; /* Espacio arriba del párrafo */
   line-height: 1.5;
   background-color: rgba(0, 0, 0, 0.6); /* Fondo semitranslúcido */
   padding: 10px; /* Espacio alrededor del párrafo */
   border-radius: 10px; /* Bordes redondeados */
   text-shadow: 2px 2px 4px rgb(0, 0, 0); /* Sombra del texto */
-  white-space: normal; /* Permite que el texto se ajuste en varias líneas */
-  margin-bottom: 90px;
+  white-space: normal; /* Ajuste del texto en varias líneas */
+  margin-bottom: 30px;
   transition: 0.1s ease-in-out;
 }
-/* Efecto de hover */
-#texto:hover {
-  transform: scale(1.1); /* Aumenta el tamaño del cuadro de texto */
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.8
-  ); /* Fondo más oscuro para mejor legibilidad */
-  font-size: 1.3em; /* Tamaño del texto incrementado */
-  padding: 15px; /* Aumenta el padding para acomodar el texto más grande */
-  z-index: 1; /* Asegura que el texto esté encima de otros elementos */
+
+.value-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.value-section {
+  margin-bottom: 60px; /* Ajustado para que no se superponga con el footer */
+}
+
+.value-box:hover {
+  transform: scale(1.05); /* Agranda el cuadro ligeramente al pasar el mouse */
+  background-color: rgba(0, 0, 0, 0.9); /* Aumenta la opacidad del fondo */
+}
+
+.value-box h3 {
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+}
+
+.value-box p {
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 0;
+  font-size: 1.1em;
+  line-height: 1.4;
+}
+
+.container {
+  padding-bottom: 30px; /* Ajustado */
 }
 
 .wsp-button {
-  width: 400px; /* Ajusta el tamaño del botón de WhatsApp */
+  width: 300px; /* Ajustado */
   margin-top: 20px;
+  position: relative;
+  bottom: 10px; /* Posiciona el botón más arriba del footer */
 }
 
 /* Footer */
 footer {
   background-color: #343a40; /* Color de fondo para el footer */
-  margin-top: auto; /* Asegura que el footer esté en la parte inferior */
-  padding: 10px 0; /* Añadido para mejorar el espaciado */
+  padding: 20px 0; /* Mejora el espaciado */
+  text-align: center; /* Centra el contenido */
 }
 
 footer a {
@@ -82,28 +109,52 @@ footer a:hover {
   .centered-text {
     max-width: 90%; /* Aumenta el ancho máximo en pantallas pequeñas */
     padding: 0 10px; /* Reduce el padding horizontal */
+    margin-top: 50px;
   }
 
   .centered-text h1 {
-    font-size: 2.5em; /* Ajusta el tamaño del texto en pantallas pequeñas */
+    font-size: 2.5em; /* Tamaño ajustado */
+    margin-top: 1em;
   }
 
   .centered-text p {
-    font-size: 1em; /* Ajusta el tamaño del texto introductorio en pantallas pequeñas */
+    font-size: 1em; /* Tamaño ajustado */
     padding: 8px; /* Ajusta el espacio alrededor del párrafo */
   }
+  .my-5 {
+    margin-top: 3rem;
+    margin-bottom: 8rem;
+  }
+
+  .value-section {
+    margin-bottom: 60px; /* Ajustado para que no se superponga con el footer */
+  }
+
   .wsp-button {
-    width: 300px; /* Ajusta el tamaño del botón en pantallas pequeñas */
+    width: 250px; /* Tamaño ajustado */
+    bottom: 5em; /* Posición ajustada para pantallas pequeñas */
   }
 }
 
 @media (max-width: 576px) {
+  .centered-text {
+    margin-top: 70px; /* Ajuste para pantallas más pequeñas */
+  }
+
   .centered-text h1 {
-    font-size: 1.8em; /* Ajusta aún más el tamaño del texto en pantallas muy pequeñas */
+    font-size: 2em;
   }
 
   .centered-text p {
-    font-size: 0.9em; /* Ajusta el tamaño del texto introductorio en pantallas muy pequeñas */
-    padding: 6px; /* Ajusta el espacio alrededor del párrafo */
+    font-size: 0.9em;
+    padding: 6px;
+  }
+
+  .value-box {
+    padding: 15px; /* Ajuste para pantallas pequeñas */
+  }
+
+  .wsp-button {
+    width: 200px; /* Tamaño ajustado */
   }
 }
