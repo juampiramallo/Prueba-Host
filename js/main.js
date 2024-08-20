@@ -88,6 +88,10 @@ document.addEventListener("DOMContentLoaded", () => {
   distanceForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    // Mostrar el mensaje "Calculando..."
+    distanceResult.innerHTML = "<p>Calculando...</p>";
+    distanceResult.style.color = "black"; // Asegúrate de que el texto sea visible
+
     const origen = encodeURIComponent(
       document.getElementById("origen").value + ", Argentina"
     );
