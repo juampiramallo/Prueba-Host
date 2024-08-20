@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+.packs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.packs-title {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #000000;
+}
+
+.pack-options {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.pack-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 350px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pack-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.pack-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #4285f4;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.pack-button:hover {
+  background-color: #357ae8;
+}
+
+.maps-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.pack-heading {
+  margin: 20px;
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+}
+
+.pack-description {
+  margin: 10px 0;
+  color: #000000;
+}
+
+.pack-price {
+  margin: 10px 0;
+  color: #585757;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .pack-options {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pack-card {
+    width: 90%;
+  }
+}

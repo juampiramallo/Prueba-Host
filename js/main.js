@@ -4,14 +4,55 @@ document.addEventListener("DOMContentLoaded", () => {
   const distanceForm = document.getElementById("distanceForm");
   const distanceResult = document.getElementById("distanceResult");
 
-  quoteForm.addEventListener("submit", (e) => {
+  // Obtener la fecha de hoy en formato 'YYYY-MM-DD'
+  const today = new Date().toISOString().split("T")[0];
+
+  // Establecer el valor mínimo de las fechas de retiro y devolución
+  document.getElementById("pickup-date").setAttribute("min", today);
+  document.getElementById("return-date").setAttribute("min", today);
+
+  quoteForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const tipoVehiculo = document.getElementById("tipoVehiculo").value;
+    const pickupDate = document.getElementById("pickup-date").value;
+    const pickupTime = document.getElementById("pickup-time").value;
+    const returnDate = document.getElementById("return-date").value;
+    const returnTime = document.getElementById("return-time").value;
     const kilometros = parseFloat(document.getElementById("kilometros").value);
-    const horas = parseFloat(document.getElementById("horas").value);
 
-    let precioKm = 0.8; // en USD
+    if (!pickupDate || !pickupTime || !returnDate || !returnTime) {
+      quoteResult.textContent = "Por favor, complete todas las fechas y horas.";
+      quoteResult.style.color = "red";
+      return;
+    }
+
+    // Crear objetos Date para las fechas y horas de retiro y devolución
+    const pickupDateTime = new Date(`${pickupDate}T${pickupTime}`);
+    const returnDateTime = new Date(`${returnDate}T${returnTime}`);
+
+    if (pickupDateTime >= returnDateTime) {
+      quoteResult.textContent =
+        "La fecha y hora de devolución debe ser después de la fecha y hora de retiro.";
+      quoteResult.style.color = "red";
+      return;
+    }
+
+    // Calcular la diferencia en horas
+    const differenceInMilliseconds = returnDateTime - pickupDateTime;
+    const differenceInHours = Math.ceil(
+      differenceInMilliseconds / (1000 * 60 * 60)
+    );
+
+    // Validar que la diferencia sea al menos 8 horas
+    if (differenceInHours < 8) {
+      quoteResult.textContent =
+        "La diferencia entre la hora de retiro y la hora de devolución debe ser de al menos 8 horas.";
+      quoteResult.style.color = "red";
+      return;
+    }
+
+    let precioKm = 0.85; // en USD
     let precioHora = 0.4; // en USD
 
     if (tipoVehiculo === "van") {
@@ -19,32 +60,29 @@ document.addEventListener("DOMContentLoaded", () => {
       precioHora *= 2;
     }
 
-    if (kilometros < 100 || horas < 8) {
-      quoteResult.textContent =
-        "Error: El mínimo aforo es de 100 km y 8 horas.";
-      quoteResult.style.color = "red";
-      return;
-    }
-
+    // Calcular el costo total en USD
     const costoKmUSD = kilometros * precioKm;
-    const costoHoraUSD = horas * precioHora;
+    const costoHoraUSD = differenceInHours * precioHora;
     const costoTotalUSD = costoKmUSD + costoHoraUSD;
 
-    fetch("https://dolarapi.com/v1/dolares/oficial")
-      .then((response) => response.json())
-      .then((data) => {
-        const valorVenta = data.venta;
-        const costoTotalARS = (costoTotalUSD * valorVenta).toFixed(2);
-        quoteResult.innerHTML = `
-                    Costo Total: $${costoTotalARS} ARS<br />
-                    Costo Total: $${costoTotalUSD.toFixed(2)} USD
-                `;
-        quoteResult.style.color = "black";
-      })
-      .catch((error) => {
-        quoteResult.textContent = `Error al obtener el tipo de cambio: ${error.message}`;
-        quoteResult.style.color = "red";
-      });
+    // Obtener el tipo de cambio
+    try {
+      const response = await fetch("https://dolarapi.com/v1/dolares/oficial");
+      const data = await response.json();
+      const valorVenta = data.venta;
+      const costoTotalARS = (costoTotalUSD * valorVenta).toFixed(2);
+
+      quoteResult.innerHTML = `
+                Costo Total: $${costoTotalARS} ARS<br />
+                Costo Total: $${costoTotalUSD.toFixed(2)} USD<br />
+                Total Horas: ${differenceInHours} horas<br />
+                Total Kilómetros: ${kilometros} km
+            `;
+      quoteResult.style.color = "black";
+    } catch (error) {
+      quoteResult.textContent = `Error al obtener el tipo de cambio: ${error.message}`;
+      quoteResult.style.color = "red";
+    }
   });
 
   distanceForm.addEventListener("submit", async (e) => {

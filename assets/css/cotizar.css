@@ -1,6 +1,5 @@
 /* Estilo general para el cuerpo */
 body {
-  font-family: "Montserrat", sans-serif;
   background-color: #f0f4f8;
   margin: 0;
   padding: 0;
@@ -18,6 +17,7 @@ body {
 
 /* Estilo del título */
 .quote-calculator h2 {
+  font-family: "Montserrat", sans-serif;
   text-align: center;
   color: #333;
   margin-bottom: 20px;
@@ -48,6 +48,7 @@ body {
   margin-bottom: 5px;
 }
 
+/* Reutilización de la clase .form-control para los campos de fecha y hora */
 .form-control {
   width: 100%;
   padding: 10px;
@@ -106,6 +107,7 @@ body {
 
 /* Estilo del título del calculador de distancias */
 .distance-calculator h2 {
+  font-family: "Montserrat", sans-serif;
   text-align: center;
   color: #333;
   margin-bottom: 20px;
