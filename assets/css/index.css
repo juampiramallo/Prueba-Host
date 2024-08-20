@@ -6,93 +6,79 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed; /* Hace que la imagen de fondo sea fija */
+  background-attachment: fixed;
   opacity: 0.9;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column; /* Asegura que el contenido se centre verticalmente */
 }
 
 .centered-text {
   text-align: center;
   color: white;
   max-width: 80%;
-  padding: 0 20px; /* Mantiene el texto alejado de los bordes */
+  padding: 0 20px;
 }
 
 .centered-text h1 {
   font-family: "Montserrat", sans-serif;
-  font-size: 3.5em; /* Tamaño ajustado */
-  background-color: rgba(0, 0, 0, 0.6); /* Fondo semitranslúcido */
-  padding: 15px; /* Espacio alrededor del texto */
-  border-radius: 10px; /* Bordes redondeados */
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Sombra del texto */
-  margin-bottom: 20px;
-  margin-top: 20px;
+  font-size: 4em;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  border-radius: 10px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+  margin-bottom: 30px;
 }
 
 .centered-text p {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.2em; /* Tamaño ajustado */
-  margin-top: 15px; /* Espacio arriba del párrafo */
+  font-size: 1.2em;
+  margin-top: 15px;
   line-height: 1.5;
-  background-color: rgba(0, 0, 0, 0.6); /* Fondo semitranslúcido */
-  padding: 10px; /* Espacio alrededor del párrafo */
-  border-radius: 10px; /* Bordes redondeados */
-  text-shadow: 2px 2px 4px rgb(0, 0, 0); /* Sombra del texto */
-  white-space: normal; /* Ajuste del texto en varias líneas */
-  margin-bottom: 30px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 10px;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0);
+  white-space: normal;
+  margin-bottom: 90px;
   transition: 0.1s ease-in-out;
 }
 
-.value-box {
-  background-color: rgba(0, 0, 0, 0.7);
+#texto:hover {
+  transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 1.3em;
+  padding: 15px;
+  z-index: 1;
+}
+
+.cotiza-button {
+  display: inline-block;
+  background-color: #007bff; /* Color de fondo del botón */
   color: white;
-  padding: 20px;
-  border-radius: 10px;
+  text-decoration: none;
+  padding-top: 20px;
+  font-size: 2em;
+  width: 400px;
+  height: 85px;
   text-align: center;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.value-section {
-  margin-bottom: 60px; /* Ajustado para que no se superponga con el footer */
-}
-
-.value-box:hover {
-  transform: scale(1.05); /* Agranda el cuadro ligeramente al pasar el mouse */
-  background-color: rgba(0, 0, 0, 0.9); /* Aumenta la opacidad del fondo */
-}
-
-.value-box h3 {
   font-family: "Montserrat", sans-serif;
-  margin-bottom: 15px;
-  font-size: 1.5em;
+  border-radius: 10px;
+  margin-bottom: 20px; /* Espacio entre el botón de Cotiza Aquí y el botón de WhatsApp */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar el botón */
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.value-box p {
-  font-family: "Montserrat", sans-serif;
-  margin-bottom: 0;
-  font-size: 1.1em;
-  line-height: 1.4;
-}
-
-.container {
-  padding-bottom: 30px; /* Ajustado */
-}
-
-.wsp-button {
-  width: 300px; /* Ajustado */
-  margin-top: 20px;
-  position: relative;
-  bottom: 10px; /* Posiciona el botón más arriba del footer */
+.cotiza-button:hover {
+  background-color: #0056b3; /* Color de fondo en hover */
+  transform: scale(1.05); /* Efecto de agrandamiento en hover */
 }
 
 /* Footer */
 footer {
-  background-color: #343a40; /* Color de fondo para el footer */
-  padding: 20px 0; /* Mejora el espaciado */
-  text-align: center; /* Centra el contenido */
+  background-color: #343a40;
+  margin-top: auto;
+  padding: 10px 0;
 }
 
 footer a {
@@ -107,48 +93,29 @@ footer a:hover {
 /* Media Queries */
 @media (max-width: 768px) {
   .centered-text {
-    max-width: 90%; /* Aumenta el ancho máximo en pantallas pequeñas */
-    padding: 0 10px; /* Reduce el padding horizontal */
-    margin-top: 50px;
+    max-width: 90%;
+    padding: 0 10px;
   }
 
   .centered-text h1 {
-    font-size: 2.5em; /* Tamaño ajustado */
-    margin-top: 1em;
+    font-size: 2.5em;
   }
 
   .centered-text p {
-    font-size: 1em; /* Tamaño ajustado */
-    padding: 8px; /* Ajusta el espacio alrededor del párrafo */
+    font-size: 1em;
+    padding: 8px;
   }
 
-  .value-box {
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-
-  .my-5 {
-    margin-top: 3rem;
-    margin-bottom: 8rem;
-  }
-
-  .value-section {
-    margin-bottom: 60px; /* Ajustado para que no se superponga con el footer */
-  }
-
-  .wsp-button {
-    width: 250px; /* Tamaño ajustado */
-    bottom: 7em; /* Posición ajustada para pantallas pequeñas */
+  .cotiza-button {
+    width: 300px;
+    font-size: 1em;
+    height: auto;
   }
 }
 
 @media (max-width: 576px) {
-  .centered-text {
-    margin-top: 70px; /* Ajuste para pantallas más pequeñas */
-  }
-
   .centered-text h1 {
-    font-size: 2em;
+    font-size: 1.8em;
   }
 
   .centered-text p {
@@ -156,11 +123,8 @@ footer a:hover {
     padding: 6px;
   }
 
-  .value-box {
-    padding: 15px; /* Ajuste para pantallas pequeñas */
-  }
-
-  .wsp-button {
-    width: 200px; /* Tamaño ajustado */
+  .cotiza-button {
+    font-size: 0.9em;
+    padding: 10px 20px;
   }
 }

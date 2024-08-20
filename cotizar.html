@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simen SA - Cotizador de Transporte</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/general.css" />
+    <link rel="stylesheet" href="/assets/css/cotizar.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">SIMEN SA</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cotizar.html">Cotizá Ya</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="quote-calculator">
+      <h2>Cotizador de Transporte</h2>
+      <div class="info-text aforo-info">
+        El aforo mínimo es de 100 km y 8 horas. Estos son los valores mínimos
+        que puedes contratar.
+      </div>
+      <form id="quoteForm">
+        <div class="form-group">
+          <label for="tipoVehiculo">Tipo de Vehículo:</label>
+          <select id="tipoVehiculo" class="form-control">
+            <option value="auto">Auto</option>
+            <option value="van">Van</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="kilometros">Kilómetros:</label>
+          <input
+            type="number"
+            id="kilometros"
+            class="form-control"
+            placeholder="Ingrese la cantidad de kilómetros"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="horas">Horas:</label>
+          <input
+            type="number"
+            id="horas"
+            class="form-control"
+            placeholder="Ingrese la cantidad de horas"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Calcular Costo</button>
+      </form>
+      <div id="quoteResult" class="result"></div>
+    </div>
+
+    <div class="distance-calculator">
+      <h2>Calculador de Distancias</h2>
+      <div class="info-text distance-info-text">
+        Ingresa los nombres de las ciudades para calcular la distancia en
+        kilómetros. La búsqueda se restringe a ubicaciones dentro de Argentina.
+      </div>
+      <form id="distanceForm">
+        <div class="distance-form-group">
+          <label for="origen">Ciudad de Origen:</label>
+          <input
+            type="text"
+            id="origen"
+            class="distance-form-control"
+            placeholder="Ingrese la ciudad de origen"
+            required
+          />
+        </div>
+        <div class="distance-form-group">
+          <label for="destino">Ciudad de Destino:</label>
+          <input
+            type="text"
+            id="destino"
+            class="distance-form-control"
+            placeholder="Ingrese la ciudad de destino"
+            required
+          />
+        </div>
+        <button type="submit" class="distance-btn">Calcular Distancia</button>
+      </form>
+      <div id="distanceResult" class="result"></div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+      <div class="container">
+        <p class="mb-0">© 2024 SIMEN SA - Todos los derechos reservados.</p>
+        <p class="mb-0">
+          Contáctanos:
+          <a href="mailto:contacto@simensa.com" class="text-white"
+            >contacto@simensa.com</a
+          >
+        </p>
+        <p class="mb-0">
+          Teléfono:
+          <a href="tel:+543517637232" target="_blank">+54 351 763-7232</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
