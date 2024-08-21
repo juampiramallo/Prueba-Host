@@ -52,12 +52,16 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    let precioKm = 0.85; // en USD
-    let precioHora = 0.4; // en USD
+    let precioKm = 0.85; // Precio base en USD
+    let precioHora = 0.4; // Precio base en USD
 
-    if (tipoVehiculo === "van") {
+    // Ajustar los precios según el tipo de vehículo
+    if (tipoVehiculo === "minibus") {
       precioKm *= 2;
       precioHora *= 2;
+    } else if (tipoVehiculo === "pickup") {
+      precioKm *= 1.5; // Precio intermedio entre Auto y Mini Bus
+      precioHora *= 1.5;
     }
 
     // Calcular el costo total en USD
@@ -73,11 +77,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const costoTotalARS = (costoTotalUSD * valorVenta).toFixed(2);
 
       quoteResult.innerHTML = `
-                Costo Total: $${costoTotalARS} ARS<br />
-                Costo Total: $${costoTotalUSD.toFixed(2)} USD<br />
-                Total Horas: ${differenceInHours} horas<br />
-                Total Kilómetros: ${kilometros} km
-            `;
+        Costo Total: $${costoTotalARS} ARS<br />
+        Costo Total: $${costoTotalUSD.toFixed(2)} USD<br />
+        Total Horas: ${differenceInHours} horas<br />
+        Total Kilómetros: ${kilometros} km
+      `;
       quoteResult.style.color = "black";
     } catch (error) {
       quoteResult.textContent = `Error al obtener el tipo de cambio: ${error.message}`;
@@ -118,10 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const lon1 = parseFloat(dataOrigen[0].lon);
       const lat2 = parseFloat(dataDestino[0].lat);
       const lon2 = parseFloat(dataDestino[0].lon);
-
-      // Verifica las coordenadas obtenidas
-      console.log(`Coordenadas Origen: Lat ${lat1}, Lon ${lon1}`);
-      console.log(`Coordenadas Destino: Lat ${lat2}, Lon ${lon2}`);
 
       // Fórmula de Haversine para calcular la distancia
       const R = 6371; // Radio de la Tierra en kilómetros

@@ -1,7 +1,7 @@
 /* General styles for the homepage */
 .background-image {
   position: relative;
-  background-image: url("../images/truck1.jpg");
+  background-image: url("../images/MiniBusHome.jpeg");
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -110,6 +110,10 @@ footer a:hover {
     width: 300px;
     font-size: 1em;
     height: auto;
+  }
+  .background-image {
+    position: relative;
+    background-image: url("../images/h1home.jpg");
   }
 }
 

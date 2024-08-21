@@ -1,0 +1,41 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.gallery-title {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2em;
+  color: #333;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 200px; /* Ajusta la altura según sea necesario */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%; /* Asegura que las imágenes llenen el contenedor */
+  object-fit: cover; /* Mantiene el aspecto de la imagen sin deformarla */
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1); /* Agranda la imagen al pasar el ratón */
+}
