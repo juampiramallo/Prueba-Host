@@ -17,6 +17,10 @@
   margin-top: 20px;
 }
 
+#mapsPing {
+  color: #f0f4f8;
+}
+
 @media (max-width: 768px) {
   .contact-info p {
     font-size: 1em; /* Ajusta el tamaño del texto en pantallas pequeñas */
