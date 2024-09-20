@@ -13,6 +13,84 @@
   justify-content: center;
 }
 
+/* Contenedor de widgets del clima */
+.weather-container {
+  position: absolute;
+  top: 20px; /* Ajusta el margen superior para que no se superponga con la navbar */
+  left: 10px; /* Margen izquierdo */
+  width: calc(
+    100% - 20px
+  ); /* Asegura que los widgets no se salgan del área visible */
+  display: flex;
+  justify-content: space-between; /* Distribuye los widgets en las esquinas */
+  padding: 15px; /* Espacio horizontal a los lados */
+  margin: 0 auto; /* Centrará el contenedor horizontalmente si es necesario */
+}
+
+/* Estilo individual para los widgets del clima */
+.weather-widget {
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+  color: rgb(255, 255, 255);
+  padding: 5px;
+  border-radius: 10px;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  width: 150px; /* Ajusta el ancho según el diseño deseado */
+  margin: 100 10px; /* Margen entre los widgets y el contenido central */
+}
+
+/* Estilo del ícono del clima */
+.weather-widget img {
+  width: 50px; /* Ajusta el tamaño del ícono */
+  vertical-align: middle;
+}
+
+/* Ajusta el margen inferior para no interferir con el título */
+.background-image {
+  padding-bottom: 150px; /* Ajusta este valor según el tamaño del título */
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+  .weather-container {
+    top: 20px; /* Reduce el margen superior en pantallas más pequeñas */
+    left: 5px; /* Reduce el margen izquierdo */
+    padding: 0 5px; /* Reduce el espacio horizontal */
+  }
+
+  .weather-widget {
+    width: 120px; /* Ajusta el ancho en pantallas más pequeñas */
+    font-size: 0.9em; /* Reduce el tamaño del texto */
+    margin: 0 5px; /* Reduce el margen entre los widgets */
+  }
+
+  .weather-widget img {
+    width: 40px; /* Ajusta el tamaño del ícono en pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 576px) {
+  .weather-container {
+    top: 20px; /* Minimiza el margen superior en pantallas muy pequeñas */
+    left: 0px; /* Minimiza el margen izquierdo */
+    width: 100%;
+  }
+
+  .weather-widget {
+    width: 110px; /* Ajusta aún más el ancho en pantallas muy pequeñas */
+    font-size: 0.8em; /* Reduce el tamaño del texto aún más */
+    margin: 0 2px; /* Ajusta el margen entre los widgets */
+  }
+
+  .weather-widget img {
+    width: 30px; /* Ajusta el tamaño del ícono para pantallas muy pequeñas */
+  }
+
+  .background-image {
+    padding-bottom: 120px; /* Ajusta el margen inferior para pantallas muy pequeñas */
+  }
+}
+
 .centered-text {
   text-align: center;
   color: white;
@@ -28,7 +106,9 @@
   border-radius: 10px;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
   margin-bottom: 30px;
-  margin-top: 10px;
+  margin-top: 120px;
+  margin-right: 80px;
+  margin-left: 80px;
 }
 
 .centered-text p {
@@ -41,16 +121,26 @@
   border-radius: 10px;
   text-shadow: 2px 2px 4px rgb(0, 0, 0);
   white-space: normal;
-  margin-bottom: 90px;
+  margin-bottom: 20px;
   transition: 0.1s ease-in-out;
 }
 
-#texto:hover {
-  transform: scale(1.1);
-  background-color: rgba(0, 0, 0, 0.8);
-  font-size: 1.3em;
-  padding: 15px;
-  z-index: 1;
+.btn-primary {
+  display: inline-block;
+  background-color: #007bff; /* Color de fondo del botón */
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar el botón */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Color de fondo en hover */
+  transform: scale(1.05); /* Efecto de agrandamiento en hover */
 }
 
 .cotiza-button {
@@ -112,6 +202,11 @@ footer a:hover {
     font-size: 1em;
     height: auto;
   }
+  .btn-primary {
+    width: 300px;
+    font-size: 1em;
+    height: auto;
+  }
   .background-image {
     position: relative;
     background-image: url("../images/h1home.jpg");
@@ -129,6 +224,10 @@ footer a:hover {
   }
 
   .cotiza-button {
+    font-size: 0.9em;
+    padding: 10px 20px;
+  }
+  .btn-primary {
     font-size: 0.9em;
     padding: 10px 20px;
   }

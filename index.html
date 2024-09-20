@@ -51,9 +51,6 @@
               <a class="nav-link" href="gallery.html">Galería</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="packs.html">Rutas Frecuentes</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="about.html">Sobre Nosotros</a>
             </li>
             <li class="nav-item">
@@ -66,6 +63,10 @@
 
     <div class="background-image">
       <div class="centered-text">
+        <div class="weather-container">
+          <div id="weather-left" class="weather-widget"></div>
+          <div id="weather-right" class="weather-widget"></div>
+        </div>
         <h1>SIMEN SA</h1>
         <p id="texto">
           Con más de 20 años de experiencia en el sector de logística, servicio
@@ -75,11 +76,20 @@
           largo de los años.¡Estamos aquí para ayudarte!
         </p>
 
+        <a
+          href="https://www.google.com/travel/flights?tfs=CBwQARoeag0IAxIJL20vMDFseTVtcg0IAxIJL20vMDRicGZ6Gh5qDQgDEgkvbS8wNGJwZnpyDQgDEgkvbS8wMWx5NW1AAUgBcAGCAQsI____________AZgBAQ&tfu=KgIIAw&hl=es"
+          class="btn btn-primary"
+          target="_blank"
+        >
+          ✈️ Vuelos a Puerto Madryn ✈️
+        </a>
+
         <p id="texto">
           Contamos con una flota propia: 10 vehículos de carga, 10 vehículos de
           pasajeros y más de 20 unidades Sedán cuatro puertas, PickUp y
           Utilitarios para alquiler sin conductor.
         </p>
+
         <a aria-label="Cotiza Aquí" href="cotizar.html" class="cotiza-button">
           COTIZA AQUÍ
         </a>
@@ -97,8 +107,9 @@
           >
         </p>
         <p class="mb-0">
-          Teléfono:
-          <a href="tel:+543516181548" target="_blank">+54 351 618-1548</a>
+          Teléfonos:
+          <a href="tel:+543517355993" target="_blank">+54 351 735-5993</a>
+          <a href="tel:+542820700886" target="_blank">+54 282 070-0886</a>
         </p>
         <p class="mb-0">
           Instagram:
@@ -111,5 +122,6 @@
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/weather.js"></script>
   </body>
 </html>
