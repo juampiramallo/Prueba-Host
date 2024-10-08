@@ -1,7 +1,7 @@
 /* General styles for the homepage */
 .background-image {
   position: relative;
-  background-image: url("../images/MiniBusHome.jpeg");
+  background-image: url("../images/FondoNuevo.jpg");
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -158,6 +158,11 @@
   margin-bottom: 20px; /* Espacio entre el botón de Cotiza Aquí y el botón de WhatsApp */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar el botón */
   transition: background-color 0.3s, transform 0.3s;
+}
+
+#invisible {
+  color: #00000000;
+  size: 0.01em;
 }
 
 .cotiza-button:hover {

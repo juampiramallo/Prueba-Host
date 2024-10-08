@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    let precioKm = 0.85; // Precio base en USD
+    let precioKm = 0.4; // Precio base en USD
     let precioHora = 0.4; // Precio base en USD
 
     // Ajustar los precios según el tipo de vehículo
