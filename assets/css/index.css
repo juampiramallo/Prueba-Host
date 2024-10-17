@@ -169,5 +169,6 @@ body {
   body {
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
   }
 }
