@@ -1,239 +1,154 @@
-/* General styles for the homepage */
-.background-image {
-  position: relative;
-  background-image: url("../images/FondoNuevo.jpg");
-  height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  opacity: 0.9;
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("/assets/images/Background.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #f5f5f5;
+  position: relative;
 }
 
-/* Contenedor de widgets del clima */
-.weather-container {
+/* Capa para controlar la opacidad del fondo */
+.backgroundOverlay {
   position: absolute;
-  top: 20px; /* Ajusta el margen superior para que no se superponga con la navbar */
-  left: 10px; /* Margen izquierdo */
-  width: calc(
-    100% - 20px
-  ); /* Asegura que los widgets no se salgan del área visible */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.823);
+  z-index: 1;
+}
+
+/* Contenedor principal */
+.mainContainer {
   display: flex;
-  justify-content: space-between; /* Distribuye los widgets en las esquinas */
-  padding: 15px; /* Espacio horizontal a los lados */
-  margin: 0 auto; /* Centrará el contenedor horizontalmente si es necesario */
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 1200px;
+  margin: 20px;
+  z-index: 2;
+  position: relative;
 }
 
-/* Estilo individual para los widgets del clima */
-.weather-widget {
-  background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
-  color: rgb(255, 255, 255);
-  padding: 5px;
-  border-radius: 10px;
-  font-family: "Montserrat", sans-serif;
-  text-align: center;
-  width: 150px; /* Ajusta el ancho según el diseño deseado */
-  margin: 100 10px; /* Margen entre los widgets y el contenido central */
+/* Estilos de la imagen */
+#image {
+  width: 430px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+  margin-top: -20px;
 }
 
-/* Estilo del ícono del clima */
-.weather-widget img {
-  width: 50px; /* Ajusta el tamaño del ícono */
-  vertical-align: middle;
+#image:hover {
+  transform: scale(1.05);
 }
 
-/* Ajusta el margen inferior para no interferir con el título */
-.background-image {
-  padding-bottom: 150px; /* Ajusta este valor según el tamaño del título */
-}
-
-/* Media Queries para dispositivos móviles */
-@media (max-width: 768px) {
-  .weather-container {
-    top: 20px; /* Reduce el margen superior en pantallas más pequeñas */
-    left: 5px; /* Reduce el margen izquierdo */
-    padding: 0 5px; /* Reduce el espacio horizontal */
-  }
-
-  .weather-widget {
-    width: 120px; /* Ajusta el ancho en pantallas más pequeñas */
-    font-size: 0.9em; /* Reduce el tamaño del texto */
-    margin: 0 5px; /* Reduce el margen entre los widgets */
-  }
-
-  .weather-widget img {
-    width: 40px; /* Ajusta el tamaño del ícono en pantallas más pequeñas */
-  }
-}
-
-@media (max-width: 576px) {
-  .weather-container {
-    top: 20px; /* Minimiza el margen superior en pantallas muy pequeñas */
-    left: 0px; /* Minimiza el margen izquierdo */
-    width: 100%;
-  }
-
-  .weather-widget {
-    width: 110px; /* Ajusta aún más el ancho en pantallas muy pequeñas */
-    font-size: 0.8em; /* Reduce el tamaño del texto aún más */
-    margin: 0 2px; /* Ajusta el margen entre los widgets */
-  }
-
-  .weather-widget img {
-    width: 30px; /* Ajusta el tamaño del ícono para pantallas muy pequeñas */
-  }
-
-  .background-image {
-    padding-bottom: 120px; /* Ajusta el margen inferior para pantallas muy pequeñas */
-  }
-}
-
-.centered-text {
-  text-align: center;
-  color: white;
-  max-width: 80%;
-  padding: 0 20px;
-}
-
-.centered-text h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 4em;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 15px;
-  border-radius: 10px;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
-  margin-bottom: 30px;
-  margin-top: 120px;
-  margin-right: 80px;
-  margin-left: 80px;
-}
-
-.centered-text p {
-  font-family: "Montserrat", sans-serif;
+/* Estilos del texto principal */
+#mainText {
+  margin-top: 20px;
   font-size: 1.2em;
-  margin-top: 15px;
-  line-height: 1.5;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 10px;
-  border-radius: 10px;
-  text-shadow: 2px 2px 4px rgb(0, 0, 0);
-  white-space: normal;
-  margin-bottom: 20px;
-  transition: 0.1s ease-in-out;
-}
-
-.btn-primary {
-  display: inline-block;
-  background-color: #007bff; /* Color de fondo del botón */
-  color: white;
-  font-family: "Montserrat", sans-serif;
-  text-decoration: none;
-  padding: 10px 20px;
-  font-size: 1.2em;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar el botón */
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3; /* Color de fondo en hover */
-  transform: scale(1.05); /* Efecto de agrandamiento en hover */
-}
-
-.cotiza-button {
-  display: inline-block;
-  background-color: #007bff; /* Color de fondo del botón */
-  color: white;
-  text-decoration: none;
-  padding-top: 20px;
-  font-size: 2em;
-  width: 400px;
-  height: 85px;
+  color: #333;
   text-align: center;
-  font-family: "Montserrat", sans-serif;
-  border-radius: 10px;
-  margin-bottom: 20px; /* Espacio entre el botón de Cotiza Aquí y el botón de WhatsApp */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar el botón */
-  transition: background-color 0.3s, transform 0.3s;
+  max-width: 600px;
+  line-height: 1.6;
 }
 
-#invisible {
-  color: #00000000;
-  size: 0.01em;
+#infoText,
+#infoText2 {
+  font-size: 1em;
+  color: #333;
+  text-align: center;
+  max-width: 900px;
+  line-height: 1.6;
 }
 
-.cotiza-button:hover {
-  background-color: #0056b3; /* Color de fondo en hover */
-  transform: scale(1.05); /* Efecto de agrandamiento en hover */
+/* Estilo para la información de contacto */
+.infoContainer {
+  position: relative;
+  width: 100%; /* Cambia el ancho a 100% */
+  max-width: 600px; /* Ancho máximo para pantallas grandes */
+  height: 110px;
+  border: 2px solid rgb(1, 50, 152);
+  margin-top: 20px;
+  padding: 5px; /* Agrega un poco de padding */
+  box-sizing: border-box; /* Asegúrate de que el padding no afecte el tamaño total */
 }
 
-/* Footer */
-footer {
-  background-color: #343a40;
-  margin-top: auto;
-  padding: 10px 0;
+/* Posiciona los elementos en las esquinas del contenedor */
+.infoItem {
+  position: absolute;
+  font-size: 1em;
+  color: #333;
 }
 
-footer a {
-  color: white;
-  text-decoration: none;
+/* Ajusta las posiciones de los elementos para pantallas pequeñas */
+#topLeft {
+  top: 10px;
+  left: 90px;
 }
 
-footer a:hover {
-  text-decoration: underline;
+#topRight {
+  top: 10px;
+  right: 90px;
 }
 
-/* Media Queries */
+#bottomLeft {
+  bottom: 10px;
+  left: 90px;
+}
+
+#bottomRight {
+  bottom: 10px;
+  right: 90px;
+}
+
+/* Media query para pantallas pequeñas */
 @media (max-width: 768px) {
-  .centered-text {
-    max-width: 90%;
-    padding: 0 10px;
+  #image {
+    width: 140%;
+    max-width: 500px;
   }
 
-  .centered-text h1 {
-    font-size: 2.5em;
-  }
-
-  .centered-text p {
+  #mainText {
     font-size: 1em;
-    padding: 8px;
   }
 
-  .cotiza-button {
-    width: 300px;
-    font-size: 1em;
-    height: auto;
-  }
-  .btn-primary {
-    width: 300px;
-    font-size: 1em;
-    height: auto;
-  }
-  .background-image {
-    position: relative;
-    background-image: url("../images/h1home.jpg");
-  }
-}
-
-@media (max-width: 576px) {
-  .centered-text h1 {
-    font-size: 1.8em;
+  #infoText,
+  #infoText2,
+  .infoItem {
+    font-size: 0.5em;
   }
 
-  .centered-text p {
-    font-size: 0.9em;
-    padding: 6px;
+  /* Ajusta el tamaño del contenedor en pantallas pequeñas */
+  .infoContainer {
+    width: 100%; /* Asegúrate de que ocupe todo el ancho */
+    height: 90px; /* Cambia a auto para que se ajuste al contenido */
+  }
+  /* Ajusta las posiciones de los elementos para pantallas pequeñas */
+  #topLeft {
+    top: 10px;
+    left: 10px;
   }
 
-  .cotiza-button {
-    font-size: 0.9em;
-    padding: 10px 20px;
+  #topRight {
+    top: 10px;
+    right: 10px;
   }
-  .btn-primary {
-    font-size: 0.9em;
-    padding: 10px 20px;
+
+  #bottomLeft {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  #bottomRight {
+    bottom: 10px;
+    right: 10px;
   }
 }
