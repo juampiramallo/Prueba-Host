@@ -143,26 +143,31 @@ body {
   .infoContainer {
     width: 300px;
     height: 150px;
+    padding: 0px 15px 0px 15px;
   }
   /* Ajusta las posiciones de los elementos para pantallas pequeñas */
   #topLeft {
     top: 10px;
     left: 10px;
+    font-size: smaller;
   }
 
   #topRight {
     top: 10px;
     right: 10px;
+    font-size: smaller;
   }
 
   #bottomLeft {
     bottom: 20px;
     left: 10px;
+    font-size: smaller;
   }
 
   #bottomRight {
     bottom: 10px;
     right: 10px;
+    font-size: smaller;
   }
 
   /* Ajuste del fondo para pantallas pequeñas */
